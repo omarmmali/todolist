@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>todolist</title>
+    </head>
+    <body>
+        <ul>
+            <%for(var i=0; i<tasks.length; i++) { %>
+            <a href = "/todo/deleteTask/<%=tasks[i].ID%>">X</a>  <li><%=tasks[i].taskName%></li>
+                <ul>
+                    <li><%=tasks[i].description%></li>
+                </ul>
+            <%}%>
+        </ul>
+        <br><br>
+        <form action = "/todo/addtask" method = "POST">
+            Task Name : <input type = "text" name = "taskName">
+            Task Description : <input type = "text" name = "taskDescription">
+            <input type = "submit" value = "Add">
+        </form>
+    </body>
+</html>
